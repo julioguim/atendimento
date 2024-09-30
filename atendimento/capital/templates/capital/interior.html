@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% block title %}Interior{% endblock %}
+
+{% block content %}
+<style>
+   .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; 
+        padding: 10px;
+    }
+
+    .nucleo {
+        background-color: #ededed;
+        margin: 10px; 
+        padding: 20px;
+        flex: 1 1 calc(33% - 20px); 
+        max-width: calc(33% - 20px); 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 250px; 
+        border-radius: 8px;
+        align-items: center;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s; 
+    }
+    .nucleo:hover {
+        transform: translateY(-5px); 
+    }
+
+    .nucleo h2 {
+        color: #09683c;
+        font-size: 25px;
+        margin: 0;
+        margin-bottom: 15px; 
+        text-shadow: none;
+        text-align: center;
+    }
+    
+    .nucleo ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 10px; 
+        text-shadow: none;
+    }
+    
+    .nucleo span {
+        color: #000000;
+        text-shadow: none;
+    }
+    
+    .nucleo li {
+        display: flex;
+        flex: 1 1 50%; 
+        align-items: center;
+        font-size: 12px;
+        color: #7fae00;
+        text-shadow: none;
+    }
+    
+    .nucleo i {
+        margin-right: 10px;
+        text-shadow: none;
+    }
+     
+    .nucleo strong {
+        margin-right: 5px; 
+        text-shadow: none;
+    }
+    
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    label {
+        color: #033a23;
+        margin-right: 10px;
+        white-space: nowrap;
+        text-shadow: none;
+    }
+    
+    select {
+        flex: 1;
+        padding: 10px;
+        margin-right: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+</style>
+<div class="inf">
+    <div class="container p-3 d-flex justify-content-center align-items-center" style="font-size: 15px;">
+        <div>
+            <div>
+                <div class="elementor-widget-container">
+                    <p class="p-0 mb-2">                 
+                        <span>
+                            <a href="https://www.defensoria.pe.def.br/" id="link" class="text-decoration-none">Início</a>
+                        </span> 
+                        <span style="color: #96CE00;">»</span> 
+                        <a href="{% url 'Home' %}" id="link" class="text-decoration-none">Atendimento</a>
+                        <span style="color: #96CE00;">»</span> 
+                        <a href="{% url 'interior_home' %}" id="link" class="text-decoration-none">Interior</a>
+                        <span style="color: #96CE00;">»</span> 
+                        <span class="" aria-current="page" style="color: #96CE00;">Locais de Atendimento</span>
+                    </p>        
+                </div>
+            </div>
+            <h1>Locais De Atendimento </h1>
+            <br>
+            <form method="get" action="">
+                <label for="comarca">Filtrar por Cidade:</label>
+                <select id="comarca" name="comarca">
+                    <option value="">Todas as Cidades</option>
+                    {% for comarca in comarcas %}
+                        <option value="{{ comarca.id }}" {% if comarca.id == request.GET.comarca %}selected{% endif %}>
+                            {{ comarca.nome }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Filtrar</button>
+            </form>
+            <br>
+            <div class="container">
+                {% for nucleo in nucleos %}
+                <div class="nucleo">
+                    <h2>{{ nucleo.nome }}</h2>
+                    <ul>
+                        {% if nucleo.predio %}
+                        <li>
+                            <i class="fa-solid fa-building"></i> <span> {{ nucleo.predio }}</span>
+                        </li>
+                        {% endif %}
+
+                        {% if nucleo.endereco %}
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i> <span> {{ nucleo.endereco }}</span>
+                        </li>
+                        {% endif %}
+
+                        {% if nucleo.email %}
+                        <li>
+                            <i class="fa-solid fa-envelope"></i> <span> {{ nucleo.email }}</span>
+                        </li>
+                        {% endif %}
+
+                        {% if nucleo.telefone %}
+                        <li>
+                            <i class="fa-solid fa-phone"></i> <span> {{ nucleo.telefone }}</span>
+                        </li>
+                        {% endif %}
+
+                        {% if nucleo.horario %}
+                        <li>
+                            <i class="fa-solid fa-clock"></i> <span> {{ nucleo.horario }}</span>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

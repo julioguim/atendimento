@@ -1,0 +1,124 @@
+
+    
+body {
+    font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* color: #333; */
+    /* background-color: #fff; */
+}
+
+body{
+    background-color:#eee;
+}
+.card {
+    background:linear-gradient(180deg, #7FAE00C9 0%, #06663AC2 100%);
+    border: none !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important
+}
+
+.card:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important
+}
+
+.card-body:hover {
+    background-color: #efefefb5;
+}
+
+.card>a {
+    text-decoration: none !important;
+    color: black !important
+}
+
+#blockitems {
+    margin-right: 0px !important;
+    margin-left: 0px !important
+}
+
+#icons_section {
+    width: 30%;
+    text-align: center;
+    padding: 0% !important
+}
+
+#icons_section>i {
+    font-size: 25px;
+    color: black !important
+}
+
+#heading_section {
+    width: 70%
+}
+
+#heading_section>h6 {
+    margin-bottom: 0px !important;
+    color: #990ae3 !important
+}
+
+#heading_section>p {
+    font-size: 14px !important
+}
+
+.cssanimation {
+    animation-duration: 1s;
+    animation-fill-mode: both
+}
+
+.fadeInBottom {
+    animation-name: fadeInBottom
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%)
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.cssanimation2 {
+    animation-duration: 2s;
+    animation-fill-mode: both
+}
+
+.fadeInBottom2 {
+    animation-name: fadeInBottom
+}
+
+@keyframes fadeInBottom2 {
+    from {
+        opacity: 0;
+        transform: translateY(100%)
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.cssanimation3 {
+    animation-duration: 3s;
+    animation-fill-mode: both
+}
+
+.fadeInBottom3 {
+    animation-name: fadeInBottom
+}
+
+.bg-success {
+    background-color: #06663A;    
+}
+
+@keyframes fadeInBottom3 {
+    from {
+        opacity: 0;
+        transform: translateY(100%)
+    }
+
+    to {
+        opacity: 1
+    }
+}

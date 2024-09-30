@@ -1,0 +1,223 @@
+:root {
+    --darkgreen: #001e0e;
+    --primary: #06663A;
+    --accent: #C29746;
+    --secondary: #7FAE00;
+    --grey: #ededed;
+    --green: #309348;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+#link {
+    color: white;
+}
+
+#link:hover {
+    color: #c29746;
+}
+
+
+
+.logo {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid var(--accent);
+    background-color: #f7f7f7;
+    background-image: url("https://www.defensoria.pe.def.br/wp-content/uploads/2021/12/Ativo-22.png");
+}
+
+.logo img {
+    max-width: 350px;
+}
+
+h1 {
+    /* color: var(--primary); */
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.inf {
+    background-image: linear-gradient(360deg, var(--primary) 0%, var(--green) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+label, div.dataTables_wrapper div.dataTables_info {
+    font-weight: bold!important;
+    font-size: 12px;
+    color: var(--primary);
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+.form-control {
+    background: #f7f7f7;
+    border-radius: 7px 7px 7px 0px;
+    border-color: transparent;
+    border-left: 3px solid var(--accent);
+    border-bottom: 1px solid #ededed;
+    transition: all .5s linear;
+    font-size: 14px;
+}
+.form-control:focus{
+    border-color: var(--primary);
+    border-left-color: var(--secondary);
+    box-shadow: none;
+}
+.bar{position: relative;}
+.bar:after{
+    content: "/";
+    position: absolute;
+    top: 50%;
+    right: -7px;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+}
+.btn-success{
+    background: linear-gradient( to bottom, var(--green), var(--secondary));
+    box-shadow: 0px 10px 10px -5px #00000045;
+    border-radius: 7px 7px 7px 7px !important;
+    border: none;
+    /* font-weight: bold; */
+    position: relative;
+    border-bottom: 3px solid var(--primary);
+    padding: 7px 20px;
+    z-index: 1;
+    transition: all .2s linear;
+    font-weight: bold;
+    
+}
+
+.btn-success::after{
+    content: "";
+    position: absolute;
+    border: 1px solid var(--green);
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left:0px;
+    border-radius: 7px 7px 7px 7px !important;
+    z-index: 0;
+    transition: all .2s linear;
+
+}
+.btn-success:hover{
+    box-shadow: -7px -7px 5px #00000023;
+    border-bottom-color: var(--accent);
+    background: linear-gradient(0deg, var(--darkgreen), var(--primary))
+}
+/* .btn-success:hover::after{
+    top:8px;
+    left:8px;
+} */
+.page-item.active .page-link{
+    background-color:var(--primary);
+    border-color: var(--secondary);
+}
+.page-link{
+    color: var(--primary);
+}
+.logobg{
+    position: fixed;
+    bottom: -15%;
+    right: -5%;
+    filter: grayscale(1)
+    opacity(.15);
+    width: 100%;
+    max-width: 30%;
+    z-index: -1;
+}
+.tabela{
+    margin: 30px 0;
+    z-index: 2;
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 10px 5px;
+    border-radius: 7px;
+    border-bottom-left-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.print{
+    background: linear-gradient(to top, var(--secondary), var(--secondary));
+    padding: 7px 15px;
+    border-radius: 7px;
+    color: #fff!important;
+    border-bottom: 2px solid var(--darkgreen);
+    border-bottom-left-radius: 0px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: rgb(0 0 0 / 27%) 0px 10px 10px -5px;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.print i{
+    margin-left: 7px;
+}
+.print:hover{
+    background: var(--primary)!important;
+    border-color: var(--secondary);
+    box-shadow: none;
+}
+.th1 th{
+background-color: var(--primary);
+color: #fff;
+font-size: 1.5rem;
+}
+.th2 th{
+background-color:#64a789;
+color: #fff;
+font-weight: bold;
+}
+.th3 th{
+font-size: 14px;
+background-color: rgb(196, 247, 196);
+color: var(--primary);
+font-size: 12px;
+}
+.table thead th {
+    vertical-align: middle;
+}
+.card {
+    position: relative;
+    width: 370px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img {
+    opacity: 0.3; /* Torna a imagem mais transparente ao passar o mouse */
+}
+
+.card:hover .overlay {
+    opacity: 1; /* Torna o overlay visível ao passar o mouse */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 240, 1, 0.5); /* Fundo verde semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(4, 247, 77);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}

@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block title %}Capital - Agendamento{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to bottom, #00693c, #ffffff);
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+    }
+
+    .container {
+        width: 81%; 
+        max-width: none; 
+        padding: 20px;
+        margin: auto; 
+    }
+
+    .predio {
+        margin-bottom: 40px;
+    }
+
+
+    .predio h2 {
+        background-color: white;
+        color: #09683c;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        text-shadow: none;
+        border-left: 8px solid #76ac92;
+        border-bottom: 8px solid #76ac92;
+        position: relative; 
+    }
+
+    .predio h2 span {
+       
+        right: 20px;         
+        top: 50%;            
+        transform: translateY(-50%); 
+        font-size: 18px;    
+        font-weight: normal; 
+        color: #666666;      
+    }
+
+    .nucleo:hover {
+        transform: translateY(-5px); 
+    }
+    
+
+    .nucleos-container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: flex-start; 
+        gap: 20px;
+    }
+
+    .nucleo-card {
+        background-color: #ffffff;
+        padding: 5px;
+        width: calc(33.33% - 40px); 
+        box-sizing: border-box;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;        
+        justify-content: space-between;
+        
+    }
+
+    @media (max-width: 768px) {
+        .nucleo-card {
+            width: calc(50% - 20px); /* Ajuste para 2 colunas em telas menores */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nucleo-card {
+            width: 100%; /* Ajuste para 1 coluna em telas muito pequenas */
+        }
+    }
+
+    .nucleo-card h3 {
+        color: #09683c;
+        padding: 15px;
+        font-size: 18px;
+        text-shadow: none;
+    }
+
+    .nucleo-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-shadow: none;
+    }
+
+    .nucleo-card li {
+        font-size: 16px;
+        color: #333;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        text-shadow: none;
+    }
+
+    .nucleo-card li span {
+        margin-left: 10px;
+    }
+
+    .nucleo-card i {
+        color: #6c757d;
+    }
+
+    .breadcrumbs {
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #666666;
+        display: inline-block;
+    }
+
+    .breadcrumbs a {
+        color: #96CE00;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .breadcrumbs span {
+        margin: 0 5px;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+    .nucleo-card {
+        width: calc(50% - 20px); 
+    }
+}
+</style>
+
+<div class="inf">
+    <div class="breadcrumbs">
+        <span>
+            <a href="https://www.defensoria.pe.def.br/" id="link" class="text-decoration-none">Início</a>
+        </span> 
+        <span>»</span> 
+        <a href="{% url 'Home' %}" id="link" class="text-decoration-none">Atendimento</a>
+        <span>»</span> 
+        <a href="{% url 'capital' %}" id="link" class="text-decoration-none">Capital</a>
+        <span>»</span> 
+        <span style="color: #96CE00;">Locais De Atendimento</span>
+    </div>
+    <h1 style="color: #ffffff; text-align: center; font-size: 25px;">Locais De Atendimento</h1>
+    <div class="container">
+        {% for predio, nucleos in predios.items %}
+            <div class="predio">
+                <h2>{{ predio }} <br>
+                    <span class="endereco " text-align="right";>{{ nucleos.0.endereco }}</span>
+                </h2>
+                <div class="nucleos-container">
+                    {% for nucleo in nucleos %}
+                        <div class="nucleo-card">
+                            <h3>{{ nucleo.nome }}</h3>
+                            <ul>
+                                {% if nucleo.email %}
+                                    <li>
+                                        <i class="fa-solid fa-envelope"></i> <span>{{ nucleo.email }}</span>
+                                    </li>
+                                {% endif %}
+                                {% if nucleo.telefone %}
+                                    <li>
+                                        <i class="fa-solid fa-phone"></i> <span>{{ nucleo.telefone }}</span>
+                                    </li>
+                                {% endif %}
+                                {% if nucleo.horario %}
+                                    <li>
+                                        <i class="fa-solid fa-clock"></i> <span>{{ nucleo.horario }}</span>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

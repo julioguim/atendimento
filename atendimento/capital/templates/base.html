@@ -1,0 +1,152 @@
+{% load static %}
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/cr-1.5.6/date-1.1.2/fc-4.1.0/fh-3.2.4/kt-2.7.0/r-2.3.0/rg-1.2.0/rr-1.2.8/sc-2.0.7/sb-1.3.4/sp-2.0.2/sl-1.4.0/sr-1.1.1/datatables.min.css"/>
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+<!-- Importando Arquivos de Estilo -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">   
+<link rel="stylesheet" href="{% static 'css/cards.css' %}">   
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">   
+<link rel="stylesheet" href="{% static 'css/ionicons.css' %}">   
+
+<!-- Importando Font-Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/datatables.mark.js/2.0.0/datatables.mark.min.css">   
+<link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.min.css"> 
+
+<!-- Javascript -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/cr-1.5.6/date-1.1.2/fc-4.1.0/fh-3.2.4/kt-2.7.0/r-2.3.0/rg-1.2.0/rr-1.2.8/sc-2.0.7/sb-1.3.4/sp-2.0.2/sl-1.4.0/sr-1.1.1/datatables.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+
+<!-- Plugins -->
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.12.1/sorting/datetime-moment.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.12.1/filtering/type-based/diacritics-neutralise.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.12.1/filtering/type-based/accent-neutralise.js"></script>
+
+<!-- <script type="text/javascript" language="javascript" src="http://bartaz.github.io/sandbox.js/jquery.highlight.js"></script> -->
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap4.min.js"></script>
+
+<title>{% block title %}{% endblock %}</title>
+
+</head>
+
+
+
+
+
+<!-- TOTALMENTE INSPIRADO EM https://bbbootstrap.com/snippets/bootstrap-4-card-70194648 -->
+<body>
+    <div class="logo p-4">
+        <img src="https://www.defensoria.pe.def.br/wp-content/uploads/2022/04/logo@3x.png" alt="">
+    </div>
+    
+    {% block content%}
+
+    {% endblock %}
+    <div class="footer-dark mt-4">
+    <footer>
+        <div class="container">
+                <div class="row" style="margin-top: 50px;">
+
+                    <div class="col-md-3 item text">
+                        <h1 style="font-size: 19px;">Quem <b>Somos</b></h1>
+                        <hr class="bg-light rounded-pill" style="height: 8px; width: 50%;">
+                        <p style="font-size: 13px; line-height: 16px; ">A <b>Defensoria Pública do Estado de Pernambuco</b> é o órgão que cumpre o DEVER CONSTITUCIONAL DO ESTADO de prestar assistência jurídica integral e gratuita à população que não tenha condições financeiras de pagar as despesas de um advogado. Essa gratuidade abrange honorários advocatícios, periciais, e custas judiciais ou extra-judiciais.</p>
+                    </div>
+
+                    <div class="col-md-3 item text">
+                        <h1 style="font-size: 19px;">Onde <b>Estamos</b></h1>
+                        <hr class="bg-light rounded-pill" style="height: 8px; width: 50%;">
+                        <p style="font-size: 11px; line-height: 16px;">Ed. Empresarial Progresso – Av. Manoel Borba, n° 640 – Boa Vista, Recife – PE, 50070-045</p>
+                        <hr class="bg-light">
+                    </div>
+
+                    <div class="col-md-3 item text">
+                        <h1 style="font-size: 19px;">Canais de <b>Comunicação</b></h1>
+                        <hr class="bg-light rounded-pill" style="height: 8px; width: 50%;">
+                        <p style="font-size: 11px;">Agendamento da Capital:</p>
+                        <p style="font-size: 12px;"><i style="font-size: 15px;" class="fab fa-telegram-plane mr-1"></i>(81) 99488-3026</p>
+                        
+                        <hr class="bg-light">
+
+                        <p style="font-size: 11px;"><b>Redes Sociais</b></p>
+                        <div class="row d-flex justify-content-center mt-2 text-white">
+                            <p class="mx-3" style="font-size: 20px;">
+                                <a class="text-white" href="https://www.facebook.com/defensoriape"><i class="fab fa-facebook-square"></i></a>  
+                            </p>
+                            <p class="mx-3" style="font-size: 20px;">
+                                <a class="text-white" href="https://twitter.com/DefensoriaPE"><i class="fab fa-twitter"></i></a>
+                            </p>
+                            <p class="mx-3" style="font-size: 20px;">
+                                <a class="text-white" href="https://www.youtube.com/channel/UCMyLpyP_4FC0ekrWTESNgFg"><i class="fab fa-youtube"></i></a>
+                            </p>
+                            <p class="mx-3" style="font-size: 20px;">
+                                <a class="text-white" href="https://www.flickr.com/photos/defensoriape/"><i class="fab fa-flickr"></i></a>
+                            </p>
+                            <p class="mx-3" style="font-size: 20px;">
+                                <a class="text-white" href="https://www.instagram.com/defensoriape"><i class="fab fa-instagram"></i></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 item text">
+                        <h1 style="font-size: 19px;">Acesso <b>Rápido</b></h1>
+                        <hr class="bg-light rounded-pill" style="height: 8px; width: 50%;">
+                        <div style="line-height: 18px;">
+                            <p style="font-size: 11px;">
+                                <a class="text-white decoration-none" href="https://www.defensoria.pe.def.br/servicos/locais-de-atendimento/"><i class="fas fa-arrow-right mr-1"></i> Locais de Atendimento</a>
+                            </p>
+                            <p style="font-size: 11px;">
+                                <a class="text-white" href="https://www.defensoria.pe.def.br/servicos/documentacao-necessaria/"><i class="fas fa-arrow-right mr-1"></i> Documentação Necessária</a>
+                            </p>
+                            <p style="font-size: 11px;">
+                                <a class="text-white" href="https://srv01.tjpe.jus.br/consultaprocessualunificada/"><i class="fas fa-arrow-right mr-1"></i> Consulta Processual</a>
+                            </p>
+                            <p style="font-size: 11px;">
+                                <a class="text-white" href="https://www.defensoria.pe.def.br/perguntas-frequentes-faq/"><i class="fas fa-arrow-right mr-1"></i> Perguntas Frequentes (FAQ)</a>
+                            </p>
+                            <p style="font-size: 11px;">
+                                <a class="text-white" href="https://www.defensoria.pe.def.br/servico-de-informacoes-ao-cidadao-sic/"><i class="fas fa-arrow-right mr-1"></i> Serviço de Informações ao Cidadão (SIC)</a>
+                            </p>
+                        </div>
+
+                        <div class="mt-2">
+                            <p style="font-size: 11px; line-height: 16px;">Encarregado de Proteção de Dados:</p>
+                            <p style="font-size: 11px; line-height: 16px;">Renato Salvadori</p>
+                            <p style="font-size: 11px; line-height: 16px;"> dpo.dppe@defensoria.pe.gov.br</p>
+                        </div>
+                    </div>
+                </div>
+            <hr class="bg-light">
+            <div class="d-flex justify-content-between">
+                <p class="text-white">© 2024 Todos os direitos reservados</p>
+                <a href="https://www.defensoria.pe.def.br/politica_privacidade/" class="text-white decoration-none">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+</div>  
+  </body>
+</div>
+<script type="text/javascript" language="javascript" src="https://johannburkard.de/resources/Johann/jquery.highlight-5.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/g/mark.js(jquery.mark.min.js),datatables.mark.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/g/mark.js(jquery.mark.min.js)"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.js"></script>
+<script src="{% static 'js/cripts.js' %}"></script>
+</html>

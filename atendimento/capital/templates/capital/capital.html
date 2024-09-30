@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block title %}Capital - Agendamento{% endblock %}
+
+{% block content %}
+<div class="inf">
+    <div class="container p-2 d-flex justify-content-center align-items-center" style="font-size: 15px;">
+        <div>
+            <div>
+                <div class="elementor-widget-container">
+                    <p class="p-0 mb-2">                 
+                        <span>
+                            <a href="https://www.defensoria.pe.def.br/" id="link" class="text-decoration-none">Início</a>
+                        </span> 
+                        <span style="color: #96CE00;">»</span> 
+                            <a href="{% url 'Home' %}" id="link" class="text-decoration-none">Atendimento</a>
+                        <span style="color: #96CE00;">»</span> 
+                        <span class="" aria-current="page" style="color: #96CE00;">Capital</span>
+                        
+                    </p>		
+                </div>
+            </div>
+            <h1>Atendimento Capital</h1>
+        </div>
+    </div>
+</div>
+<style>
+    
+    .content-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .content-container h1 {
+        color: #036635;
+        font-size: 30px;
+        margin-bottom: 10px; 
+    }
+    
+    .content-container p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 20px 0;
+        color: #333;
+        text-align: justify;
+        padding: 0 20px;
+    }
+
+    .content-container .agendamento-virtual, 
+    .content-container .agendamento-presencial {
+        border: none; 
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .content-container .agendamento-virtual h2, 
+    .content-container .agendamento-presencial h3 {
+        color: #036635;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .content-container .agendamento-virtual a, 
+    .content-container .btn-enderecos a {
+        display: inline-flex;
+        align-items: center; 
+        justify-content: center; 
+        background-color: #229ED9;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px; 
+        width: auto; 
+    }
+
+    .content-container .agendamento-virtual a i, 
+    .content-container .btn-enderecos a i {
+        margin-right: 8px; 
+        font-size: 18px; /* Tamanho do ícone */
+    }
+
+    .content-container .agendamento-virtual p {
+        font-size: 14px;
+        color: #666;
+        display: flex;
+        align-items: center;
+        margin: 0; 
+    }
+
+    .content-container .agendamento-virtual p i {
+        margin-right: 8px;
+        font-size: 18px; 
+    }
+
+    .content-container .btn-enderecos {
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .content-container .btn-enderecos a {
+        text-align: center;
+        background-color: #6BC477;
+        color: #ffffff;
+        padding: 15px 0;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .icon {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+
+    /* Estilos específicos para a div agendamento-virtual */
+    .agendamento-virtual {
+        padding: 15px;
+        margin-bottom: 20px;
+      
+    }
+
+    .agendamento-virtual h3 {
+        color: #036635;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .agendamento-virtual a {
+        display: inline-flex; /* Ajusta para alinhar ícone e texto no centro */
+        align-items: center; /* Alinha verticalmente o ícone e o texto */
+        background-color: #0804c4;
+        color: #ffffff;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px; 
+    }
+
+    .agendamento-virtual a i {
+        margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+        font-size: 18px; /* Tamanho do ícone */
+    }
+
+    .agendamento-virtual p {
+        font-size: 14px;
+        color: #666;
+        display: flex;
+        align-items: center;
+        margin: 0; 
+    }
+
+    .agendamento-virtual p i {
+        margin-right: 8px;
+        font-size: 18px; 
+    }
+
+    .agendamento-virtual > * {
+        margin: 0; 
+    }
+
+    /* Estilos específicos para a div agendamento-presencial */
+    .agendamento-presencial {
+        padding: 15px;
+        margin-bottom: 20px;
+        background: 
+            linear-gradient(
+                to right, 
+                rgba(0, 61, 0, 0.8), /* Verde escuro */
+                rgba(127, 174, 0, 0.8) /* Verde mais claro */
+            ),
+            url('https://www.defensoria.pe.def.br/wp-content/uploads/2022/03/Pessoa-tendo-organizacao-nos-documentos-scaled-1.webp') no-repeat center center;
+        background-size: cover;
+        color: #ffffff; /* Cor do texto padrão para branco */
+    }
+
+    .agendamento-presencial p {
+        margin-bottom: 10px;
+        color: #ffffff; /* Assegura que o texto em <p> é branco */
+    }
+
+    .agendamento-presencial strong {
+        color: #E59F3A; 
+    }
+
+    .agendamento-presencial p i {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+
+    /* Estilo para o título fora da div e a linha horizontal */
+    .agendamento-presencial-title {
+        color: #036635; 
+        font-size: 24px;
+        margin-bottom: 10px; 
+    }
+
+    /* Estilos para a linha horizontal */
+    .agendamento-presencial-hr {
+        border: 0;
+        height: 2px;
+        background: #E59F3A; /* Cor da linha horizontal */
+        margin-bottom: 20px;
+    }
+    .btn-enderecos {
+        text-align: left; /* Alinha o conteúdo à esquerda */
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .btn-enderecos a {
+        text-align: left; /* Alinha o texto do botão à esquerda */
+        background-color: #6BC477;
+        color: #ffffff;
+        padding: 15px 0;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        width: auto;
+        display: inline-block;
+    }
+</style>
+
+
+
+
+<div class="container mt-4 pb-4 content-container">
+    <h1>Capital</h1>
+    <hr class="agendamento-presencial-hr">
+    <p  style="text-align: justify; margin-bottom: 20px; padding: 0 20px;"><strong>Se você reside na Capital e precisa de atendimento da Defensoria Pública do Estado de Pernambuco, em qualquer área de nossa atuação, deve efetuar o seu agendamento por meio do Núcleo de Primeiro Atendimento. </strong></p>
+    <p style="text-align: justify; margin-bottom: 20px; padding: 0 20px;"><strong>Você pode obter o seu agendamento se dirigindo presencialmente ao Núcleo de Primeiro Atendimento ou de maneira virtual, tudo de acordo com as instruções abaixo: </strong></p>
+    <h3 class="agendamento-presencial-title">AGENDAMENTO VIRTUAL</h3>
+    <hr class="agendamento-presencial-hr">
+    <div class="agendamento-virtual">
+        <a style="text-align: justify; margin-bottom: 20px; padding: 0 20px;" href="https://t.me/Defensoria_Publica_de_Pernambuco" target="_blank">
+            <i class="fab fa-telegram"></i> Telegram (81) 9.9488-3026
+        </a>
+        <p style="text-align: justify; margin-bottom: 20px; padding: 0 20px;">  <i class="far fa-clock"></i> Horário: 8h às 16h</p>
+    </div>
+    <h3 class="agendamento-presencial-title">AGENDAMENTO PRESENCIAL</h3>
+    <hr class="agendamento-presencial-hr">
+    <div class="agendamento-presencial">
+        <p style="text-align: justify; margin-bottom: 20px; padding: 0 20px;"><strong>Endereço:</strong> Av. Manoel Borba, nº 640, Edifício Progresso, Boa Vista, Recife-PE</p>
+        <p style="text-align: justify; margin-bottom: 20px; padding: 0 20px;"><strong>Horário:</strong> <i class="far fa-clock icon"></i> 8h às 16h (entrada no prédio até às 15h)</p>
+        <p style="text-align: justify; margin-bottom: 20px; padding: 0 20px;"><strong>OBS:</strong> Traga RG, CPF e comprovantes de residência e de renda.</p>
+    </div>
+    <p style="text-align: justify; margin-bottom: 20px; padding: 0 20px;">Caso você já tenha um atendimento agendado e deseje apenas saber os endereços dos locais de atendimento, clique no botão abaixo:</p>
+    <div class="btn-enderecos">
+        <a  href="{% url 'locaiscapital' %}">Visualizar Endereços</a>
+    </div>
+</div>
+
+{% endblock %}
