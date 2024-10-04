@@ -12,23 +12,41 @@
     .body{
         background-color: beige;    
     }
-    .card-img-top{
+    .card-img-top {
         border-radius: 50px;
         padding: 20px;
+        width: 362px;
+        height: 273px;
+        object-fit: cover;
     }
-    .card{
-        border-radius:35px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    .card {
+        border-radius: 35px;
+        border: 10px solid #12733e; 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 
+                    0 4px 8px rgba(0, 0, 0, 0.2);
         justify-content: space-between;
-        color: #ccc;      
+        color: #12733e;
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        align-items: center;
     }
-    .card-sem-imagem {
-        background-color: #36B500; 
-        color: white; 
+    .card:hover {
+        transform: scale(1.05); 
+        border-color: #0A502A;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 
+                    0 6px 12px rgba(0, 0, 0, 0.3);  
     }
-    .card-body{
+    .card-body {
         padding: 25px;
         margin-top: -15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .card-sem-imagem {
+        background-color: #f9f9f9;
+        border: 10px solid #12733e; 
+        align-items: center;
     }
 
     .breadcrumbs {
