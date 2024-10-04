@@ -18,11 +18,12 @@ class Comarca(models.Model):
 class Nucleo(models.Model):
     nome = models.CharField(max_length=100)  
     comarca = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='nucleos')
-    predio = models.CharField(max_length=50,null=True, blank=True)
+    predio = models.CharField(max_length=60, null=True, blank=True)
     endereco = models.CharField(max_length=255)  
-    telefone = models.CharField(max_length=255,null=True, blank=True)  
-    email = models.EmailField(max_length=254,null=True, blank=True)  
+    telefone = models.CharField(max_length=255, null=True, blank=True)  
+    email = models.EmailField(max_length=254, null=True, blank=True)  
     horario = models.CharField(max_length=50)
+    imagem = models.ImageField(upload_to='nucleo_images/', null=True, blank=True)  # Campo de imagem
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

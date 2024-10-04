@@ -45,7 +45,7 @@ h1 {
 
 .inf {
     background-image: linear-gradient(360deg, var(--primary) 0%, var(--green) 100%);
-    color: #fff;
+    color: #eee;
     text-align: center;
     padding: 10px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
@@ -166,25 +166,25 @@ label, div.dataTables_wrapper div.dataTables_info {
     border-color: var(--secondary);
     box-shadow: none;
 }
-.th1 th{
-background-color: var(--primary);
-color: #fff;
-font-size: 1.5rem;
-}
-.th2 th{
-background-color:#64a789;
-color: #fff;
-font-weight: bold;
-}
-.th3 th{
-font-size: 14px;
-background-color: rgb(196, 247, 196);
-color: var(--primary);
-font-size: 12px;
-}
-.table thead th {
-    vertical-align: middle;
-}
+    .th1 th{
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1.5rem;
+    }
+    .th2 th{
+    background-color:#64a789;
+    color: #fff;
+    font-weight: bold;
+    }
+    .th3 th{
+    font-size: 14px;
+    background-color: rgb(196, 247, 196);
+    color: var(--primary);
+    font-size: 12px;
+    }
+    .table thead th {
+        vertical-align: middle;
+    }
 .card {
     position: relative;
     width: 370px;
