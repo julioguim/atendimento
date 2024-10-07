@@ -81,43 +81,7 @@ label, div.dataTables_wrapper div.dataTables_info {
     font-size: 1.5rem;
     transform: translateY(-50%);
 }
-.btn-success{
-    background: linear-gradient( to bottom, var(--green), var(--secondary));
-    box-shadow: 0px 10px 10px -5px #00000045;
-    border-radius: 7px 7px 7px 7px !important;
-    border: none;
-    /* font-weight: bold; */
-    position: relative;
-    border-bottom: 3px solid var(--primary);
-    padding: 7px 20px;
-    z-index: 1;
-    transition: all .2s linear;
-    font-weight: bold;
-    
-}
 
-.btn-success::after{
-    content: "";
-    position: absolute;
-    border: 1px solid var(--green);
-    width: 100%;
-    height: 100%;
-    top:0px;
-    left:0px;
-    border-radius: 7px 7px 7px 7px !important;
-    z-index: 0;
-    transition: all .2s linear;
-
-}
-.btn-success:hover{
-    box-shadow: -7px -7px 5px #00000023;
-    border-bottom-color: var(--accent);
-    background: linear-gradient(0deg, var(--darkgreen), var(--primary))
-}
-/* .btn-success:hover::after{
-    top:8px;
-    left:8px;
-} */
 .page-item.active .page-link{
     background-color:var(--primary);
     border-color: var(--secondary);
